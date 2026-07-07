@@ -24,35 +24,93 @@ bg = get_base64("background.png")
 page_bg = f"""
 <style>
 
+/* ---------------- BACKGROUND ---------------- */
+
 .stApp {{
-background-image: url("data:image/png;base64,{bg}");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
+    background-image: url("data:image/png;base64,{bg}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }}
+
+/* ---------------- HEADER ---------------- */
 
 [data-testid="stHeader"] {{
-background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0);
 }}
+
+/* ---------------- SIDEBAR ---------------- */
 
 [data-testid="stSidebar"] {{
-background: rgba(40,40,40,0.92);
+    background: rgba(40,40,40,0.92);
 }}
 
-[data-testid="stSidebar"] * {{
+/* Sidebar Heading & Labels */
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] p {{
     color: white !important;
+    font-weight: bold;
 }}
+
+/* ---------------- SELECT BOX ---------------- */
+
+/* White select box */
+
+.stSelectbox div[data-baseweb="select"] > div {{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 8px;
+}}
+
+/* Selected text (Australia, India, etc.) */
+
+.stSelectbox div[data-baseweb="select"] span {{
+    color: black !important;
+}}
+
+/* Search text while typing */
+
+.stSelectbox input {{
+    color: black !important;
+}}
+
+/* Dropdown menu */
+
+div[role="listbox"] {{
+    background: white !important;
+}}
+
+/* Dropdown options */
+
+div[role="option"] {{
+    color: black !important;
+    background: white !important;
+}}
+
+/* Hover effect */
+
+div[role="option"]:hover {{
+    background: #EAEAEA !important;
+}}
+
+/* ---------------- KPI CARDS ---------------- */
 
 div[data-testid="metric-container"] {{
-background: rgba(255,255,255,0.90);
-padding:15px;
-border-radius:15px;
-box-shadow:2px 2px 12px rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.90);
+    padding:15px;
+    border-radius:15px;
+    box-shadow:2px 2px 12px rgba(0,0,0,0.30);
 }}
 
+/* ---------------- HEADINGS ---------------- */
+
 h1,h2,h3,h4,h5 {{
-color:black;
+    color:black;
 }}
 
 </style>
